@@ -33,7 +33,7 @@ db.connect((err) => {
 
     // untuk insert data
     app.post("/tambah", (req, res) => {
-        // const insertSql = 'INSERT INTO produk (nama_produk, keterangan, harga, jumlah) VALUES ('${req.body.nama}', '${req.body.keterangan}', '${req.body.harga}', '${req.body.jumlah}');'
+        const insertSql = `INSERT INTO produk (nama_produk, keterangan, harga, jumlah) VALUES ('${req.body.nama}', '${req.body.keterangan}', '${req.body.harga}', '${req.body.jumlah}');`
         db.query(insertSql, (err, result) => {
             if(err) throw err
             res.redirect("/")
